@@ -40,7 +40,10 @@
         <div class="col-6">
           <p>一人辺りの回収額</p>
         </div>
-        <div class="col-4" id="oneAmount"></div>
+        <div class="col-4">
+          <input type="text" id="oneAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <span class="input-group-text">00</span>
+        </div>
         <div class="col-2">
           <p>円</p>
         </div>
@@ -106,7 +109,7 @@
             }
             var oneCollectionAmount =
               (allCollect - totalInvestmentAmount) / peopleNumber; //一人あたりの回収額
-            $("#oneAmount").text(oneCollectionAmount);
+            $("#oneAmount").text(oneCollectionAmount/100);
 
             for (let i = 0; i < peopleNumber; i++) {
               var acceptance =
