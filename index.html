@@ -105,7 +105,7 @@
               totalInvestmentAmount += $(".investment").eq(i).val() * 1; //総投資額
             }
             var oneCollectionAmount =
-              Math.floor((allCollect - totalInvestmentAmount) / peopleNumber); //一人あたりの回収額
+              (allCollect - totalInvestmentAmount) / peopleNumber; //一人あたりの回収額
             $("#oneAmount").text(oneCollectionAmount);
 
             for (let i = 0; i < peopleNumber; i++) {
