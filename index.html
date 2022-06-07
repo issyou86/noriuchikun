@@ -45,6 +45,14 @@
         <div class="col-2">
           <p>円</p>
         </div>
+        <div class="row">
+          <div class="col-6">
+            <p>一人あたりの平均投資額</p>
+          </div>
+          <div class="col-4" id="oneInvestment"></div>
+        <div class="col-2">
+          <p>円</p>
+        </div>
       </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary" type="button">計算開始</button>
@@ -98,6 +106,7 @@
           }
           $(".btn").on("click", function () {
             var investmentAmount = $(this).val(); //投資額
+            
 
             var allCollect = $("#totalAmount").val(); //総回収額取得
 
@@ -108,6 +117,12 @@
             var oneCollectionAmount =
               Math.floor((allCollect - totalInvestmentAmount) / peopleNumber); //一人あたりの回収額
               $("#oneAmount").text(oneCollectionAmount);
+            
+            var investmentAmountAvarege = Math.floor(investmentAmount/peopleNumber);//一人あたりの平均投資額
+            $("#oneInvestment").text(investmentAmountAvarege);
+            
+            
+            
 
             for (let i = 0; i < peopleNumber; i++) {
               var acceptance =
